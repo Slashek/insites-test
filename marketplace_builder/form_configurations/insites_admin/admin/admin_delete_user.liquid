@@ -1,0 +1,14 @@
+---
+name: delete_admin_user
+resource: User
+resource_owner: anyone
+configuration:
+  profiles:
+    administrator:
+      properties:
+        is_enabled:
+          property_options:
+                default: false
+authorization_policies:
+  - only_allowed_by_administrators
+---

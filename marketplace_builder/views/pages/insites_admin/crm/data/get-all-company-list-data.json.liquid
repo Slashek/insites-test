@@ -1,0 +1,18 @@
+---
+slug: api/get-all-company-list-data.json
+authorization_policies:
+ - only_allowed_by_administrators
+---
+
+{% assign sortBy = "updated_at" %}
+{% assign orderBy = "asc" %}
+
+{% if params.sortBy %}
+    {% assign sortBy = params.sortBy | downcase %}
+{% endif %}
+{% if params.orderBy %}
+    {% assign orderBy = params.orderBy | downcase %}
+{% endif %}
+ 
+{% query_graph 'get_all_companies', result_name: 'company_list', size: size, page: page, sortBy: sortBy, orderBy: orderBy %}
+{{ company_list | json }}

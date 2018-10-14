@@ -1,0 +1,10 @@
+.DS_Store
+.tmp
+.git
+node_modules/
+tmp
+.settings
+*.log
+dist/
+.marketplace-kit
+insites-config.json

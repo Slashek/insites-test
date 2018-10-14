@@ -1,0 +1,19 @@
+query get_user_profile_by_email ($email: String!) {  
+  items: people(
+    user: {
+        is_deleted: false
+        email: $email
+  	  } 
+  ){ 
+   results {
+      id
+      first_name
+      last_name
+      email
+    	administrator_details: profile(profile_type: "administrator") {
+            is_enabled: property(name: "is_enabled")
+            company_name: property(name: "company")                
+        }
+    }
+  }
+}

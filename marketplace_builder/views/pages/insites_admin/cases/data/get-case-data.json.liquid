@@ -1,0 +1,14 @@
+---
+slug: api/get-case-data.json
+authorization_policies:
+ - only_allowed_by_administrators
+---
+
+{% assign id = "" %}
+
+{% if params.id %}
+    {% assign id = params.id | downcase %}
+{% endif %} 
+
+{% query_graph 'get_case_data', result_name: 'case_data', id: id %}
+{{ case_data | json }} 

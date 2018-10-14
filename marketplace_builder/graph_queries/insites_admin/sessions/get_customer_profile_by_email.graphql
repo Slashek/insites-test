@@ -1,0 +1,18 @@
+query get_customer_profile_by_email ($email: String!) {  
+  items: people(
+    user: {
+        is_deleted: false
+        email: $email
+  	  } 
+  ){ 
+   results{
+      id
+      first_name
+      last_name
+      email
+    	customer_details: profile(profile_type: "customer") {
+        is_enabled: property(name: "is_enabled")             
+      }
+    }
+  }
+}

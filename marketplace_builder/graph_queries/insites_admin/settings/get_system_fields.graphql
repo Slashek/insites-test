@@ -1,0 +1,21 @@
+query get_system_fields ($key: String, $page: Int, $size: Int) {
+		items: customizations(
+        per_page: $size
+        page: $page
+      	name: "system_fields"
+        sort: [{name: "updated_at", order: "asc"}]
+      	properties: [{name: "key", value: $key},{name: "is_enabled", value: "true"}]
+      	is_deleted: false
+        ) {
+            total_entries
+            total_pages
+            has_next_page
+            has_previous_page
+            results { 
+              id
+              key: property(name: "key")              
+              value: property(name: "value")
+              is_enabled: property(name: "is_enabled")
+          }
+    	}
+}

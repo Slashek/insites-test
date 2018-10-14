@@ -1,0 +1,8 @@
+---
+slug: api/get-company-details-data.json
+authorization_policies:
+ - only_allowed_by_administrators
+---
+ 
+{% query_graph 'get_company_details', result_name: 'details', id: params.id %}
+{{ details | json }}

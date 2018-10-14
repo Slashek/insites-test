@@ -1,0 +1,27 @@
+mutation set_as_contact ($userid: ID!) {
+  user_update (
+    id: $userid
+    form_configuration_name: "crm_update_customer"
+    user: {
+			profiles:[
+        {
+          name : "customer"
+          values: {
+              properties: [
+                 { name: "is_enabled", value: "true" }
+              ]
+          }
+        }
+      ]
+    }    
+  ) { 
+      id
+      first_name
+      last_name
+      email
+      profile(profile_type: "customer") {
+          id
+          is_enabled:property(name: "is_enabled")      	
+        }
+  }   
+}

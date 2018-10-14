@@ -1,0 +1,114 @@
+query get_all_customers_paginated ($page: Int, $size: Int, $sortBy: String, $orderBy: String) {
+  items: people(
+    per_page: $size
+    page: $page
+    sort: [{name: $sortBy, order: $orderBy}]
+        user: {
+            is_deleted: false
+        profiles: [
+                    {
+                    profile_type: "customer",
+                    properties:[{name:"is_enabled", value:"true"}] 
+                    }
+                ]
+        }
+    ) {
+        total_entries
+        total_pages
+        has_next_page
+        has_previous_page
+        results {
+            id          
+            slug
+            email
+            first_name
+            last_name     
+            created_at
+            updated_at
+            customer_details: profile(profile_type: "customer") {
+                is_enabled: property(name: "is_enabled")
+                company_id: property(name: "company_id")
+                notes: property(name: "notes")
+                contact_type: property(name: "contact_type")
+                profile_image: custom_image(name: "profile_image") {      
+                    original: url(version: "transformed")
+                }
+                home_address: custom_addresses(name: "home_address") { 
+                    address
+                    street
+                    city
+                    state 
+                    country
+                    postcode
+                }
+                work_address: custom_addresses(name: "work_address") { 
+                    address
+                    street
+                    city
+                    state
+                    country
+                    postcode
+                }
+                shipping_address_1: custom_addresses(name: "shipping_address_1") { 
+                    address
+                    street
+                    city
+                    state
+                    country
+                    postcode
+                }
+                shipping_address_2: custom_addresses(name: "shipping_address_2") { 
+                    address
+                    street
+                    city
+                    state
+                    country
+                    postcode
+                }
+                shipping_address_3: custom_addresses(name: "shipping_address_3") { 
+                    address
+                    street
+                    city
+                    state
+                    country
+                    postcode
+                }
+                billing_address: custom_addresses(name: "billing_address") { 
+                    address
+                    street
+                    city
+                    state
+                    country
+                    postcode
+                }
+                po_address: custom_addresses(name: "po_address") { 
+                    address
+                    street
+                    city
+                    state
+                    country
+                    postcode
+                }
+            }
+            contact_number: profile(profile_type: "contact_number") {
+                home_phone_country_code: property(name: "home_phone_country_code")
+                home_phone_area_code: property(name: "home_phone_area_code")
+                home_phone_number: property(name: "home_phone_number")
+                mobile_phone_country_code: property(name: "mobile_phone_country_code")
+                mobile_phone_area_code: property(name: "mobile_phone_area_code")
+                mobile_phone_number: property(name: "mobile_phone_number")
+                work_phone_country_code: property(name: "work_phone_country_code")
+                work_phone_area_code: property(name: "work_phone_area_code")
+                work_phone_number: property(name: "work_phone_number")
+            }
+            social_links: profile(profile_type: "social_links") {
+                facebook_link: property(name: "facebook_link")
+                youtube_link: property(name: "youtube_link")
+                google_plus_link: property(name: "google_plus_link")
+                twitter_link: property(name: "twitter_link")
+                linkedin_link: property(name: "linkedin_link")
+                instagram_link: property(name: "instagram_link")
+            }            
+        }
+  	}
+}

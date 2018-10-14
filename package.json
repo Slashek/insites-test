@@ -1,0 +1,31 @@
+{
+    "name": "",
+    "version": "1.0.0",
+    "description": "",
+    "main": "",
+    "scripts": {
+        "ins_commit": "./node_modules/.bin/git-cz",
+        "report:ins_lint": "./node_modules/.bin/eslint ./marketplace_builder/assets/scripts/app/./**/*.js -f node_modules/eslint-detailed-reporter/lib/detailed.js -o report.html",
+        "build:ins_webpack": "webpack"
+    },
+    "dependencies": {
+        "axios": "^0.18.0",
+        "lodash": "^4.17.11"
+    },
+    "devDependencies": {
+        "commitizen": "^2.10.1",
+        "cz-conventional-changelog": "^2.1.0",
+        "eslint": "^5.7.0",
+        "eslint-detailed-reporter": "^0.7.3",
+        "glob": "^7.1.3",
+        "webpack": "^4.20.2",
+        "webpack-cli": "^3.1.2"
+    },
+    "author": "maciej@near-me.com",
+    "license": "ISC",
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}

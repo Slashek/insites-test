@@ -1,0 +1,60 @@
+---
+name: add_new_company
+resource: Customization
+resource_owner: anyone
+configuration:    
+    properties:
+        company_name:
+        is_enabled:
+        assigned_to:
+        website:
+        company_type:
+        industry_type:
+        notes:
+        facebook_link:
+        youtube_link:
+        google_plus_link:
+        twitter_link:
+        linkedin_link:
+        instagram_link:
+        home_phone_country_code:
+        home_phone_area_code:
+        home_phone_number: 
+        mobile_phone_country_code:
+        mobile_phone_area_code:
+        mobile_phone_number:
+        work_phone_country_code:
+        work_phone_area_code:
+        work_phone_number:
+    custom_images:
+        profile_image:
+            image:
+                validation: {
+                    file_content_type: { allow: ['image/jpg', 'image/png', 'image/gif'] }
+            }  
+    custom_addresses:     
+        location_1:
+            address:
+            city:
+            state:
+            street:
+            country:
+            postcode:
+        location_2:
+            address:
+            city:
+            state:
+            street:
+            country:
+            postcode:
+        location_3:
+            address:
+            city:
+            state:
+            street:
+            country:
+            postcode:                     
+authorization_policies:
+  - only_allowed_by_administrators         
+---
+<pre style="display: none;">{{form_builder | json}}</pr>

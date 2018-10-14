@@ -1,0 +1,6 @@
+name: administrator
+custom_attributes:
+- name: company
+  attribute_type: string
+- name: is_enabled
+  attribute_type: boolean

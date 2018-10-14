@@ -1,0 +1,23 @@
+---
+slug: admin/unauthorized
+format: html
+layout_name: insites_admin/insites_session
+---
+{%- assign name = 'Insites Admin - Unauthorized' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+
+{% if flash.alert != blank %}
+  <span id="message" style="display:none">{{ flash.alert }}</span>
+  <script>
+    var message = document.getElementById('message').innerText;
+    toastr.options.closeHtml = '<button><i class="icon-close-1"></i></button>';
+    toastr.options.closeButton = false;
+    toastr.options.timeOut = 3000;
+    toastr.options.extendedTimeOut = 1000;
+    toastr.error(message);
+  </script>
+{% endif %}
+
+<div class="forgot-password-wrap">
+  <h2>Unauthorized</h2>
+</div>

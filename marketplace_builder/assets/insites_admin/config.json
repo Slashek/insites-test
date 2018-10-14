@@ -1,0 +1,22 @@
+{
+  "menus": [
+    {
+      "name": "Dashboard",
+      "isActive": false,
+      "link": "/dashboard",
+      "app": false
+    },
+    {
+      "name": "Insites Todo",
+      "isActive": false,
+      "link": "/todo/index.html",
+      "app": true
+    },
+    {
+      "name": "Liquid",
+      "isActive": false,
+      "link": "/liquid.html",
+      "app": true
+    }
+  ]
+}

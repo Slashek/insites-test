@@ -1,0 +1,22 @@
+---
+slug: admin/set-administrator
+format: html
+layout_name: insites_admin/insites_session
+---
+{% if params.email %}
+{% execute_query "get_user_profile_by_email" , email: {{params.email}}, result_name: "profile" %}
+<div id="userData" style="display:none">{{profile.item.results[0].id | json}}</div>
+    {% if profile.items.results == null %}
+        <p>Error: Email provided is invalid or does not exist.</p>
+    {% else %}
+        {% execute_query "set_administrator" , userid: profile.items.results[0].id %}
+        <p><em><u>{{profile.items.results[0].email}}</u></em> is now an administrator.</p>
+        <br>
+        <p>You will be redirected to the login page in a few seconds.</p>
+        <script>
+            setTimeout(() => { window.location.href = "/admin/login"; }, 3000);
+        </script>
+    {% endif %}
+{% else %}
+    <p>Error: Please provide 'email' parameter.</p>
+{% endif %}

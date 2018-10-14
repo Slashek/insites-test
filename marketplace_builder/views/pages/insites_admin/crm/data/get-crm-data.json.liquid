@@ -1,0 +1,12 @@
+---
+slug: api/get-crm-data.json
+authorization_policies:
+ - only_allowed_by_administrators
+---
+
+{% if params.id %}
+    {% assign id = params.id | plus: 0  %}
+{% endif %}
+ 
+{% query_graph 'get_crm_profile', result_name: 'data', id: id %}
+{{ data | json }}

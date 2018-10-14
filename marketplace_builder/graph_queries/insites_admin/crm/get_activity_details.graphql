@@ -1,0 +1,54 @@
+query get_activity_details ($id: ID!) {
+		items: customizations(
+      	name: "activities"
+        id: $id
+      	is_deleted: false
+        ) {
+            total_entries
+            results { 
+                case_id: id
+              	user_id
+              	created_at
+              	case_type: name
+              	case_label: human_name
+              	case_data: properties
+                file_attachment: 
+                    custom_attachment(name: "attachment") {
+                        id
+                        file_name
+                        url
+                    }
+                file_attachment_2: 
+                    custom_attachment(name: "attachment_2") {
+                        id
+                        file_name
+                        url
+                    } 
+                file_attachment_3: 
+                    custom_attachment(name: "attachment_3") {
+                        id
+                        file_name
+                        url
+                    } 
+                file_attachment_4: 
+                    custom_attachment(name: "attachment_4") {
+                        id
+                        file_name
+                        url
+                    } 
+                file_attachment_5: 
+                    custom_attachment(name: "attachment_5") {
+                        id
+                        file_name
+                        url
+                    }    
+                userData: user {
+                    id
+                    name
+                    first_name
+                    last_name
+                    email
+                }
+            }
+    }
+}

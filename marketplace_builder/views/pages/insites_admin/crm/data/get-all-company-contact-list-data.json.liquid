@@ -1,0 +1,22 @@
+---
+slug: api/get-all-company-contact-list-data.json
+authorization_policies:
+ - only_allowed_by_administrators
+---
+
+{% assign sortBy = "updated_at" %}
+{% assign orderBy = "asc" %}
+{% assign id = "" %}
+
+{% if params.id %}
+    {% assign id = params.id | downcase %}
+{% endif %} 
+{% if params.sortBy %}
+    {% assign sortBy = params.sortBy | downcase %}
+{% endif %}
+{% if params.orderBy %}
+    {% assign orderBy = params.orderBy | downcase %}
+{% endif %}
+
+{% query_graph 'get_all_company_contact_list', result_name: 'contact_list', id: id, sortBy: sortBy, orderBy: orderBy %}
+{{ contact_list | json }}

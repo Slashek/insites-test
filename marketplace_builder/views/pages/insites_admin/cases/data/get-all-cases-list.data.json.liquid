@@ -1,0 +1,30 @@
+---
+slug: api/get-all-cases-data.json
+authorization_policies:
+ - only_allowed_by_administrators
+---
+
+{% assign sortBy = "updated_at" %}
+{% assign orderBy = "asc" %}
+
+{% if params.assigned_to %}
+    {% assign assigned_to = params.assigned_to | downcase %}
+{% endif %}
+{% if params.sortBy %}
+    {% assign sortBy = params.sortBy | downcase %}
+{% endif %}
+{% if params.orderBy %}
+    {% assign orderBy = params.orderBy | downcase %}
+{% endif %}
+{% if params.case_type %}
+    {% assign case_type = params.case_type | downcase %}
+{% endif %}
+{% if params.date_from %}
+    {% assign date_from = params.date_from | downcase %}
+{% endif %}
+{% if params.date_to %}
+    {% assign date_to = params.date_to | downcase %}
+{% endif %}
+
+{% query_graph 'get_all_cases', result_name: 'case_list' %}
+{{ case_list | json }}

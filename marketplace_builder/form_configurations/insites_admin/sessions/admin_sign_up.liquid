@@ -1,0 +1,62 @@
+---
+name: admin_sign_up
+resource: User
+resource_owner: anyone
+redirect_to: /admin/sessions/new
+configuration:
+  email:
+  password:
+  first_name:
+  last_name:
+  profiles:
+    administrator:
+      properties:
+        company:
+        is_enabled: 
+            property_options:
+                default: true
+    contact_number:
+      properties:
+        work_phone_country_code:
+        work_phone_area_code:
+        work_phone_number:
+callback_actions: |-
+  {% log "admin_sign_up" %}
+  {% query_graph 'generate_user_temporary_token', email: form.email, result_name: 'g' %}
+  {% log g %}
+  {% if g.user %}
+  {% execute_query 'admin_password_token', id: g.user.id, token: g.user.temporary_token %}
+  {% endif %}
+authorization_policies:
+  - only_allowed_by_administrators
+---
+
+{% form url: '/api/users', method: 'post' %}
+<div class="grid-container">
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 cell">
+      <label class="form-label">First Name
+        {% input 'first_name' %}
+      </label>
+    </div>
+    <div class="large-12 cell">
+      <label class="form-label">Email
+        {% input 'email' %}
+      </label>
+    </div>
+    <div class="large-12 cell">
+      <label class="form-label">Password
+        {% input 'password', as: 'password' %}
+      </label>
+  </div> 
+
+    {% fields_for 'profiles' %}
+      {% fields_for 'administrator', form: 'profiles' %}
+      {% endfields_for %}
+    {% endfields_for %}
+    <div class="large-12 cell submit-btn-wrap">
+        {% submit 'Create' class: 'ripple-effects' %}
+    </div>
+  </div>
+</div>
+{% endform %}

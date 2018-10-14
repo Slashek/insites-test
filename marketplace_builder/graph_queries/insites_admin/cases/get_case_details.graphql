@@ -1,0 +1,35 @@
+query get_cases_details ($id: ID!) {
+		items: customizations(
+        id: $id
+      	is_deleted: false
+        ) {
+            total_entries
+            results { 
+                case_id: id
+              	user_id
+              	created_at
+              	case_type: name
+              	case_label: human_name
+                case_data: properties
+              	userData: user {
+              	  id
+                  name
+                  first_name
+                  last_name
+                  email
+                  updated_at
+                  contact_number: profile(profile_type: "contact_number") {
+                      home_phone_country_code: property(name: "home_phone_country_code")
+                      home_phone_area_code: property(name: "home_phone_area_code")
+                      home_phone_number: property(name: "home_phone_number")
+                      mobile_phone_country_code: property(name: "mobile_phone_country_code")
+                      mobile_phone_area_code: property(name: "mobile_phone_area_code")
+                      mobile_phone_number: property(name: "mobile_phone_number")
+                      work_phone_country_code: property(name: "work_phone_country_code")
+                      work_phone_area_code: property(name: "work_phone_area_code")
+                      work_phone_number: property(name: "work_phone_number")
+                  }
+              }
+          }
+    	}
+}

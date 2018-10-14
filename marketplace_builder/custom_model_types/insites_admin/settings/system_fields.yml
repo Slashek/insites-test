@@ -1,0 +1,8 @@
+name: System Fields
+custom_attributes:
+- name: key
+  attribute_type: string
+- name: value
+  attribute_type: string
+- name: is_enabled
+  attribute_type: boolean

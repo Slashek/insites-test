@@ -1,0 +1,149 @@
+---
+slug: admin/insites
+format: html
+layout_name: insites_admin/insites_shell
+authorization_policies:
+  - only_allowed_by_administrators
+---
+{%- assign name = 'Insites Admin' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+
+<ins-admin>
+  <ins-sidebar
+    with-sidebar-actions
+    full-logo="{{ 'insites_admin/images/Insites_logo.svg' | asset_url }}"
+    icon-logo="{{ 'insites_admin/images/insites_logo_icon.svg' | asset_url }}">
+
+    <ins-sidebar-item
+      id="overview"
+      link="#/overview"
+      icon="icon-dashboard"
+      label="Overview"
+      landing-page>
+    </ins-sidebar-item>
+
+    <ins-sidebar-item
+      link="#/admin-users"
+      icon="icon-admin-user"
+      label="Admin Users">
+    </ins-sidebar-item>
+
+    <ins-sidebar-item
+      icon="icon-crm"
+      label="CRM"
+      with-submenu>
+
+        <ins-sidebar-item
+          link="#/customers"
+          label="Customers">
+        </ins-sidebar-item>
+
+        <ins-sidebar-item
+          link="#/cases"
+          label="Cases">
+        </ins-sidebar-item>
+
+    </ins-sidebar-item>
+
+    <ins-sidebar-footer class="side-bar-footer">
+      <ins-sidebar-footer-menu icon="icon-settings-1">
+        <ins-sidebar-item
+          link="#/system-fields"
+          label="System Fields">
+        </ins-sidebar-item>
+
+        <ins-sidebar-item
+          link="#/api-keys"
+          label="API Keys">
+        </ins-sidebar-item>
+      </ins-sidebar-footer-menu>
+      <ins-sidebar-footer-button onclick="logoutUser()" icon="icon-logout-1"></ins-sidebar-footer-button>
+    </ins-sidebar-footer>
+
+</ins-sidebar>
+
+<ins-content>
+  
+  {% query_graph 'current_user', result_name: 'g' %}
+  <div class="hide-render">
+    {% render_form 'admin_create_profile' %}
+  </div>
+  
+  <ins-header>
+    <ins-header-user
+      name="{{g.current_user.name}}"
+      logout-link="/admin/sessions/logout"
+      profile-link="#/my-profile">
+    </ins-header-user>
+
+    <ins-instances
+      logo-link="{{'insites_admin/images/jepto-icon.png' | asset_url }}"
+      instance="Jepto">
+    </ins-instances>
+  </ins-header>
+
+  <ins-renderer label="Overview" link="#/overview">
+    <div id="app"></div>
+    <script src="{{ 'insites_admin/insites/js/chunk-vendors.fe09157a.js' | asset_url }}"></script>
+    <script src="{{ 'insites_admin/insites/js/app.ba7c5881.js' | asset_url }}"></script>
+  </ins-renderer>
+</ins-content>
+
+<ins-notifications>
+  <ins-notifications-item
+    event-type="Task Completed"
+    heading="Heading"
+    duration="5 mins ago"
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    link="/"
+    link-label="View Task"
+    icon="icon-check"
+    status="green">
+  </ins-notifications-item>
+
+  <ins-notifications-item
+    event-type="Event Started"
+    heading="Heading"
+    duration="1 hr ago"
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    link="/"
+    link-label="View Event"
+    icon="icon-today"
+    status="blue">
+  </ins-notifications-item>
+
+  <ins-notifications-item
+    event-type="Event Started"
+    duration="1 hr ago"
+    icon="icon-settings"
+    status="red">
+  </ins-notifications-item>
+</ins-notifications>
+</ins-admin>
+<script>
+  // var myProfile = document.getElementById('myProfile');
+
+  // setTimeout(() => {
+  //   myProfile.addEventListener('click', function(){
+  //     var isOverview = document.getElementById('app') ? 'overview' : '';
+      
+  //     console.log(isOverview);
+  //   });
+  // }, 1000);
+
+  function logoutUser(){
+    window.location.assign('/admin/sessions/logout');
+  }
+
+  function toastIt(type, message, options) {
+
+    for (var option in options) {
+
+      if (toastr.options[option]) {
+        toastr.options[option] = options[option];
+      }
+    }
+    toastr.options.preventDuplicates = true;
+    toastr[type](message);
+  }
+</script>

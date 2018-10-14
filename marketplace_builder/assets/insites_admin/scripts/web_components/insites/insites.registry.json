@@ -1,0 +1,337 @@
+{
+  "namespace": "insites",
+  "fsNamespace": "insites",
+  "loader": "../insites.js",
+  "global": "insites.global.js",
+  "core": "insites.yp7lwfiw.js",
+  "corePolyfilled": "insites.6vepcfkv.js",
+  "components": {
+    "ins-action": {
+      "bundleIds": {
+        "$": "okooqlxj"
+      }
+    },
+    "ins-action-item": {
+      "bundleIds": {
+        "$": "mr8gvixt"
+      },
+      "encapsulation": "shadow"
+    },
+    "ins-admin": {
+      "bundleIds": {
+        "$": "etpobu6c"
+      }
+    },
+    "ins-backdrop": {
+      "bundleIds": {
+        "$": "qkmrncjh"
+      }
+    },
+    "ins-bar-chart": {
+      "bundleIds": {
+        "$": "jei17zid"
+      }
+    },
+    "ins-base-table": {
+      "bundleIds": {
+        "$": "njq53m4k"
+      }
+    },
+    "ins-base-table-row": {
+      "bundleIds": {
+        "$": "bq5v1hmg"
+      }
+    },
+    "ins-base-table-td": {
+      "bundleIds": {
+        "$": "eemck6jn"
+      }
+    },
+    "ins-base-table-th": {
+      "bundleIds": {
+        "$": "0ecafart"
+      }
+    },
+    "ins-breadcrumbs": {
+      "bundleIds": {
+        "$": "sjqj4rld"
+      }
+    },
+    "ins-button": {
+      "bundleIds": {
+        "$": "xn8kidxk"
+      }
+    },
+    "ins-card": {
+      "bundleIds": {
+        "$": "krenva6l"
+      }
+    },
+    "ins-checkbox": {
+      "bundleIds": {
+        "$": "njq53m4k"
+      }
+    },
+    "ins-confirm-modal": {
+      "bundleIds": {
+        "$": "jqwmioza"
+      }
+    },
+    "ins-content": {
+      "bundleIds": {
+        "$": "vjqsjghw"
+      }
+    },
+    "ins-datepicker": {
+      "bundleIds": {
+        "$": "xjtnjevi"
+      }
+    },
+    "ins-dropdown": {
+      "bundleIds": {
+        "$": "njq53m4k"
+      }
+    },
+    "ins-duration": {
+      "bundleIds": {
+        "$": "vfywtpt5"
+      }
+    },
+    "ins-fav-icon": {
+      "bundleIds": {
+        "$": "3srp2yiz"
+      }
+    },
+    "ins-filter": {
+      "bundleIds": {
+        "$": "zjyp3cqr"
+      }
+    },
+    "ins-filter-item": {
+      "bundleIds": {
+        "$": "zjyp3cqr"
+      }
+    },
+    "ins-form": {
+      "bundleIds": {
+        "$": "h7wkdjyf"
+      }
+    },
+    "ins-header": {
+      "bundleIds": {
+        "$": "zz7mw5uw"
+      }
+    },
+    "ins-header-user": {
+      "bundleIds": {
+        "$": "x8vhcocp"
+      }
+    },
+    "ins-image-picker": {
+      "bundleIds": {
+        "$": "raq8gnen"
+      }
+    },
+    "ins-input": {
+      "bundleIds": {
+        "$": "xn8kidxk"
+      }
+    },
+    "ins-input-tel": {
+      "bundleIds": {
+        "$": "vbv7c2ea"
+      }
+    },
+    "ins-instances": {
+      "bundleIds": {
+        "$": "gym7o7hf"
+      }
+    },
+    "ins-instances-item": {
+      "bundleIds": {
+        "$": "4ri5i94y"
+      }
+    },
+    "ins-instances-sub-item": {
+      "bundleIds": {
+        "$": "uvlvuex7"
+      },
+      "encapsulation": "shadow"
+    },
+    "ins-line-chart": {
+      "bundleIds": {
+        "$": "ksh8ews0"
+      }
+    },
+    "ins-loader": {
+      "bundleIds": {
+        "$": "njq53m4k"
+      }
+    },
+    "ins-logo": {
+      "bundleIds": {
+        "$": "qcz1kbwr"
+      }
+    },
+    "ins-notifications": {
+      "bundleIds": {
+        "$": "wzb8ryfk"
+      }
+    },
+    "ins-notifications-item": {
+      "bundleIds": {
+        "$": "tisgvssi"
+      }
+    },
+    "ins-open-table": {
+      "bundleIds": {
+        "$": "6k8qcpxd"
+      }
+    },
+    "ins-radio": {
+      "bundleIds": {
+        "$": "so7suitp"
+      }
+    },
+    "ins-renderer": {
+      "bundleIds": {
+        "$": "sjqj4rld"
+      }
+    },
+    "ins-searchbar": {
+      "bundleIds": {
+        "$": "wxs9lest"
+      }
+    },
+    "ins-select": {
+      "bundleIds": {
+        "$": "njq53m4k"
+      }
+    },
+    "ins-select-option": {
+      "bundleIds": {
+        "$": "njq53m4k"
+      }
+    },
+    "ins-select2": {
+      "bundleIds": {
+        "$": "8wqufcuq"
+      }
+    },
+    "ins-sidebar": {
+      "bundleIds": {
+        "$": "uc25of8b"
+      }
+    },
+    "ins-sidebar-footer": {
+      "bundleIds": {
+        "$": "ebsm7l9z"
+      }
+    },
+    "ins-sidebar-footer-button": {
+      "bundleIds": {
+        "$": "jcfue6rn"
+      }
+    },
+    "ins-sidebar-footer-menu": {
+      "bundleIds": {
+        "$": "h485uuad"
+      }
+    },
+    "ins-sidebar-item": {
+      "bundleIds": {
+        "$": "3uuc7exv"
+      }
+    },
+    "ins-sparkline": {
+      "bundleIds": {
+        "$": "0qjf0gyw"
+      }
+    },
+    "ins-styleguide": {
+      "bundleIds": {
+        "$": "7suyrcgh"
+      }
+    },
+    "ins-styleguide-actual": {
+      "bundleIds": {
+        "$": "sodn5xz8"
+      }
+    },
+    "ins-styleguide-code": {
+      "bundleIds": {
+        "$": "gihchhik"
+      }
+    },
+    "ins-table": {
+      "bundleIds": {
+        "$": "okooqlxj"
+      }
+    },
+    "ins-tagging-input": {
+      "bundleIds": {
+        "$": "6smguekc"
+      }
+    },
+    "ins-tags-button": {
+      "bundleIds": {
+        "$": "lmiqk1kq"
+      },
+      "encapsulation": "shadow"
+    },
+    "ins-td": {
+      "bundleIds": {
+        "$": "okooqlxj"
+      }
+    },
+    "ins-td-checkbox": {
+      "bundleIds": {
+        "$": "mr8gvixt"
+      },
+      "encapsulation": "shadow"
+    },
+    "ins-textarea": {
+      "bundleIds": {
+        "$": "q7ezbxsf"
+      }
+    },
+    "ins-th": {
+      "bundleIds": {
+        "$": "mr8gvixt"
+      },
+      "encapsulation": "shadow"
+    },
+    "ins-th-checkbox": {
+      "bundleIds": {
+        "$": "mr8gvixt"
+      },
+      "encapsulation": "shadow"
+    },
+    "ins-timepicker": {
+      "bundleIds": {
+        "$": "d4dg3amt"
+      }
+    },
+    "ins-timezone": {
+      "bundleIds": {
+        "$": "1mpfgsj1"
+      }
+    },
+    "ins-title": {
+      "bundleIds": {
+        "$": "hbkiixu7"
+      }
+    },
+    "ins-toggle-switch": {
+      "bundleIds": {
+        "$": "jx4v3p6d"
+      }
+    },
+    "ins-tr": {
+      "bundleIds": {
+        "$": "mr8gvixt"
+      },
+      "encapsulation": "shadow"
+    }
+  }
+}

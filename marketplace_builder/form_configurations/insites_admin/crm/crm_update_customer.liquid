@@ -1,0 +1,101 @@
+---
+name: crm_update_customer
+resource: User
+resource_owner: anyone
+redirect_to: #
+configuration:
+  email:
+    property_options:
+      readonly: true
+  first_name:
+  last_name:
+  name:
+  first_name:
+  last_name:
+  profiles:
+    customer:
+      properties:
+        is_enabled:
+            property_options:
+                default: true
+        company_id:
+        contact_type:
+        notes:
+      custom_images:
+        profile_image:
+          image:
+            validation: {
+                file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif'] }
+            }
+      custom_addresses:     
+          home_address:
+            address:
+            city:
+            state:
+            street:
+            country:
+            postcode: 
+          work_address:
+             address:
+             city:
+             state:
+             street:
+             country:
+             postcode: 
+          shipping_address_1:
+             address:
+             city:
+             state:
+             street:
+             country:
+             postcode:
+          shipping_address_2:
+             address:
+             city:
+             state:
+             street:
+             country:
+             postcode:  
+          shipping_address_3:
+             address:
+             city:
+             state:
+             street: 
+             country:
+             postcode:
+          billing_address:
+             address:
+             city:
+             state:
+             street:
+             country:
+             postcode:
+          po_address:
+             address:
+             city:
+             state:
+             street:
+             country:
+             postcode:      
+    social_links:
+      properties:
+        facebook_link:
+        youtube_link:
+        google_plus_link:
+        twitter_link:
+        linkedin_link:
+        instagram_link:  
+    contact_number:
+      properties:
+        home_phone_country_code:
+        home_phone_area_code:
+        home_phone_number:
+        work_phone_country_code:
+        work_phone_area_code:
+        work_phone_number:
+        mobile_phone_country_code:
+        mobile_phone_area_code:
+        mobile_phone_number: 
+#authorization_policies:
+#  - only_allowed_by_administrators
+---

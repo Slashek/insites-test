@@ -1,0 +1,43 @@
+{
+    "max-lines": [
+        "error",
+        {
+            "max": 80,
+            "skipBlankLines": true,
+            "skipComments": true
+        }
+    ],
+    "max-lines-per-function": [
+        "error",
+        {
+            "max": 22,
+            "skipBlankLines": true,
+            "skipComments": true,
+            "IIFEs": true
+        }
+    ],
+    "max-params": [
+        "error",
+        {
+            "max": 6
+        }
+    ],
+    "max-statements": [
+        "error",
+        {
+            "max": 20
+        }
+    ],
+    "max-nested-callbacks": [
+        "error",
+        {
+            "max": 2
+        }
+    ],
+    "no-unused-vars": "error",
+    "indent": [
+        "error",
+        2
+    ],
+    "camelcase": "error"
+}

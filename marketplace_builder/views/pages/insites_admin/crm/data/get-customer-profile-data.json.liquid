@@ -1,0 +1,15 @@
+---
+slug: admin/get-customer-profile-data.json
+format: json
+layout_name: ""
+---
+{% if params.email %}
+{% execute_query "get_customer_profile_by_email" , email: {{params.email}}, result_name: "profile" %}
+    {% if profile.items.results.size <= 0 %}
+        Error: Email provided is invalid or does not exist.
+    {% else %}
+        {{profile | json}}
+    {% endif %}
+{% else %}
+    Error: Please provide 'email' parameter.
+{% endif %}

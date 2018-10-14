@@ -1,0 +1,27 @@
+mutation set_administrator ($userid: ID!) {
+  user_update (
+    id: $userid
+    form_configuration_name: "set_administrator"
+    user: {
+			profiles:[
+        {
+          name : "administrator"
+          values: {
+              properties: [
+                 { name: "is_enabled", value: "true" }
+              ]
+          }
+        }
+      ]
+    }    
+  ) { 
+      id
+      first_name
+      last_name
+      email
+      profile(profile_type: "administrator") {
+          id
+          is_enabled:property(name: "is_enabled")      	
+        }
+  }   
+}

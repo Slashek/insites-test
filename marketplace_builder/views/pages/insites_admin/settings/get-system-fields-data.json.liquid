@@ -1,0 +1,28 @@
+---
+slug: api/get-system-fields-data.json
+authorization_policies:
+ - only_allowed_by_administrators
+---
+
+{% assign size = 10 %}
+{% assign page = 1 %}
+{% assign key = "" %}
+
+{% if params.key %}
+    {% assign key = params.key %}
+{% endif %}
+{% if params.size %}
+    {% assign size = params.size | plus: 0 %}
+{% endif %}
+{% if params.page %}
+    {% assign page = params.page | plus: 0 %}
+{% endif %}
+{% if params.sortBy %}
+    {% assign sortBy = params.sortBy | downcase %}
+{% endif %}
+{% if params.orderBy %}
+    {% assign orderBy = params.orderBy | downcase %}
+{% endif %}
+ 
+{% query_graph 'get_system_fields', result_name: 'list', key: key, size: size, page: page, sortBy: sortBy, orderBy: orderBy %}
+{{ list | json }}

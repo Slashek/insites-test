@@ -1,0 +1,13 @@
+query  {
+  users {
+    id
+    slug
+    name
+    email
+    administrator: profile(profile_type: "administrator") {
+      id
+      is_enabled: property(name: "is_enabled")
+      company: property(name: "company")
+    }
+  }
+}

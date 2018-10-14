@@ -1,0 +1,15 @@
+query get_case_data ($id: String!) {
+		items: customizations(
+      	name: "cases"
+      	is_deleted: false
+      	properties: [{name:"case_id", value: $id}]
+      ) {
+          total_entries
+          results {     
+              updated_at
+              case_id: property(name: "case_id") 
+              assigned_to: property(name: "assigned_to") 
+              status: property(name: "status")              	
+            }
+        }
+}

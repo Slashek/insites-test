@@ -1,0 +1,12 @@
+{
+    "empty-rules": true,
+    "important": true,
+    "known-properties": true,
+    "duplicate-properties": true,
+    "display-property-grouping": true,
+    "ids": true,
+    "font-sizes": true,
+    "box-model": true,
+    "regex-selectors": true,
+    "universal-selector": true
+}

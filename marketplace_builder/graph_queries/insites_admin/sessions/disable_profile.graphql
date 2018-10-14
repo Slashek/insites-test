@@ -1,0 +1,23 @@
+mutation disable_profile ($profile: String!, $id: ID) {
+    user_update (
+      form_configuration_name: "update_profile",
+      id: $id,
+      user: {
+          profiles: [
+            {
+                name: $profile,
+                values: {
+                    properties: [
+                      { name: "is_enabled", value: "false" }
+                    ]
+                }
+            }
+          ]
+      }
+    ) {
+      id    
+      
+    }
+    
+  }
+  
