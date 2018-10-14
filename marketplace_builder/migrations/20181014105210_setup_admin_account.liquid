@@ -1,0 +1,6 @@
+{% comment %}
+  One could also easily generate password by using random_string filter, for example
+  {% assign random_password = 10 | random_string %}
+  {{ random_password }} => '6a1ee2629'
+{% endcomment %}
+{% execute_query 'create_administrator', email: "admin@example.com", password: "admin1234" %}
