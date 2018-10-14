@@ -1,0 +1,17 @@
+---
+name: admin_user_create
+resource: User
+resource_owner: anyone
+configuration:
+  email:
+  password:
+  first_name:
+  profiles:
+    administrator:
+      properties:
+        is_enabled:
+            property_options:
+                default: true
+# authorization_policies:
+#   - only_when_no_administrators_are_there
+---
